@@ -73,3 +73,15 @@ TEST(TicTacToeBoardTest, placePieceAlreadyPlaced)
 	board.placePiece(0,0);
 	ASSERT_EQ(board.placePiece(0,0), X);
 }
+
+TEST(TicTacToeBoardTest, placePieceNegativeRow)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.placePiece(-1,0), Invalid);
+}
+
+TEST(TicTacToeBoardTest, placePieceNegativeColumn)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.placePiece(0,-1), Invalid);
+}
