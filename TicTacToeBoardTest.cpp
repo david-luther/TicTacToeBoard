@@ -85,3 +85,48 @@ TEST(TicTacToeBoardTest, placePieceNegativeColumn)
 	TicTacToeBoard board;
 	ASSERT_EQ(board.placePiece(0,-1), Invalid);
 }
+
+TEST(TicTacToeBoardTest, getPieceNoPiece)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.getPiece(0,0), Blank);
+}
+
+TEST(TicTacToeBoardTest, getPieceOnePiece)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,0);
+	ASSERT_EQ(board.getPiece(0,0), X);
+}
+
+TEST(TicTacToeBoardTest, getPieceTwoPieces)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,0);
+	board.placePiece(0,1);
+	ASSERT_EQ(board.getPiece(0,1), O);
+}
+
+TEST(TicTacToeBoardTest, getPieceNegativeColumn)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.getPiece(0, -1), Invalid);
+}
+
+TEST(TicTacToeBoardTest, getPieceNegativeRow)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.getPiece(-1, 0), Invalid);
+}
+
+TEST(TicTacToeBoardTest, getPieceInvalidColumn)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.getPiece(0, 3), Invalid);
+}
+
+TEST(TicTacToeBoardTest, getPieceInvalidRow)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.getPiece(3, 0), Invalid);
+}
