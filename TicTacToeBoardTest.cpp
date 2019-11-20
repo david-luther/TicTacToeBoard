@@ -155,5 +155,5 @@ TEST(TicTacToeBoardTest, findWinnerFullBoardNoWinner)
 	board.placePiece(2,2);
 	board.placePiece(2,1);
 
-	ASSERT_EQ(board.findWinner(), Blank);
+	ASSERT_EQ(board.getWinner(), Blank);
 }
