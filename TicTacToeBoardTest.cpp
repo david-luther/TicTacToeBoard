@@ -24,14 +24,14 @@ TEST(TicTacToeBoardTest, unitTestName)
 TEST(TicTacToeBoardTest, toggleTurnOnce)
 {
 	TicTacToeBoard board;
-	ASSERT_EQ(board.toggleTurn(), Piece.O);
+	ASSERT_EQ(board.toggleTurn(), O);
 }
 
 TEST(TicTacToeBoardTest, toggleTurnTwice)
 {
 	TicTacToeBoard board;
 	board.toggleTurn();
-	ASSERT_EQ(board.toggleTurn(), Piece.X);
+	ASSERT_EQ(board.toggleTurn(), X);
 }
 
 TEST(TicTacToeBoardTest, toggleTurnThreeTimes)
@@ -39,5 +39,5 @@ TEST(TicTacToeBoardTest, toggleTurnThreeTimes)
 	TicTacToeBoard board;
 	board.toggleTurn();
 	board.toggleTurn();
-	ASSERT_EQ(board.toggleTurn(), Piece.O);
+	ASSERT_EQ(board.toggleTurn(), O);
 }

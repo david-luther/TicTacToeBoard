@@ -19,13 +19,13 @@ TicTacToeBoard::TicTacToeBoard()
 **/
 Piece TicTacToeBoard::toggleTurn()
 {
-	if (turn == Piece.X)
+	if (turn == X)
 	{
-		turn = Piece.O;
+		turn = O;
 	}
-	else if (turn == Piece.O)
+	else if (turn == O)
 	{
-		turn = Piece.X;
+		turn = X;
 	}
 	else 
 	{
