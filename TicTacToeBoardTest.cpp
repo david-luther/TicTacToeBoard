@@ -130,3 +130,30 @@ TEST(TicTacToeBoardTest, getPieceInvalidRow)
 	TicTacToeBoard board;
 	ASSERT_EQ(board.getPiece(3, 0), Invalid);
 }
+
+TEST(TicTacToeBoardTest, getPiecePiecePlacedButDifferentLocation)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,0);
+	ASSERT_EQ(board.getPiece(0,1), Blank);
+}
+
+TEST(TicTacToeBoardTest, findWinnerFullBoardNoWinner)
+{
+	//x o x
+	//o o x
+	//x x o
+	TicTacToeBoard board;
+
+	board.placePiece(0,0);
+	board.placePiece(0,1);
+	board.placePiece(0,2);
+	board.placePiece(1,0);
+	board.placePiece(1,2);
+	board.placePiece(1,1);
+	board.placePiece(2,0);
+	board.placePiece(2,2);
+	board.placePiece(2,1);
+
+	ASSERT_EQ(board.findWinner(), Blank);
+}
