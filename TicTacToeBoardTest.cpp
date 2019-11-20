@@ -54,3 +54,22 @@ TEST(TicTacToeBoardTest, placePieceSecondMove)
 	board.placePiece(0,0);
 	ASSERT_EQ(board.placePiece(0,1), O);
 }
+
+TEST(TicTacToeBoardTest, placePieceInvalidRow)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.placePiece(3,0), Invalid);
+}
+
+TEST(TicTacToeBoardTest, placePieceInvalidColumn)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.placePiece(0,3), Invalid);
+}
+
+TEST(TicTacToeBoardTest, placePieceAlreadyPlaced)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,0);
+	ASSERT_EQ(board.placePiece(0,0), X);
+}
