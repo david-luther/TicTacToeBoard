@@ -41,3 +41,16 @@ TEST(TicTacToeBoardTest, toggleTurnThreeTimes)
 	board.toggleTurn();
 	ASSERT_EQ(board.toggleTurn(), O);
 }
+
+TEST(TicTacToeBoardTest, placePieceFirstMove)
+{
+	TicTacToeBoard board;
+	ASSERT_EQ(board.placePiece(0,0), X);
+}
+
+TEST(TicTacToeBoardTest, placePieceSecondMove)
+{
+	TicTacToeBoard board;
+	board.placePiece(0,0);
+	ASSERT_EQ(board.placePiece(0,1), O);
+}

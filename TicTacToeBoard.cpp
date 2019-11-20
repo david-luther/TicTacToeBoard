@@ -45,7 +45,25 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  return Invalid;
+	Piece val;
+
+	//check if full board is complete
+
+	if (row >= BOARDSIZE || column >= BOARDSIZE)
+	{
+		val = Invalid;
+	}
+	else if (board[row][column] != Blank)
+	{
+		val = board[row][column];
+	}
+	else
+	{
+		board[row][column] = turn;
+		val = turn;
+	}
+	toggleTurn();
+	return val;
 }
 
 /**
