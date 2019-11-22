@@ -157,3 +157,83 @@ TEST(TicTacToeBoardTest, findWinnerFullBoardNoWinner)
 
 	ASSERT_EQ(board.getWinner(), Blank);
 }
+
+TEST(TicTacToeBoardTest, findWinnerRowOne)
+{
+	TicTacToeBoard board;
+
+	board.placePiece(0,0);
+	board.placePiece(1,1);
+	board.placePiece(0,1);
+	board.placePiece(2,2);
+	board.placePiece(0,2);
+
+	ASSERT_EQ(board.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, findWinnerRowTwo)
+{
+	TicTacToeBoard board;
+
+	board.placePiece(0,0);
+	board.placePiece(1,1);
+	board.placePiece(0,1);
+	board.placePiece(1,0);
+	board.placePiece(2,2);
+	board.placePiece(1,2);
+
+	ASSERT_EQ(board.getWinner(), O);
+}
+
+TEST(TicTacToeBoardTest, findWinnerDiagonalOne)
+{
+	TicTacToeBoard board;
+
+	board.placePiece(0,0);
+	board.placePiece(1,0);
+	board.placePiece(1,1);
+	board.placePiece(0,1);
+	board.placePiece(2,2);
+
+	ASSERT_EQ(board.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, findWinnerDiagonalTwo)
+{
+	TicTacToeBoard board;
+
+	board.placePiece(0,2);
+	board.placePiece(1,0);
+	board.placePiece(1,1);
+	board.placePiece(0,1);
+	board.placePiece(2,0);
+
+	ASSERT_EQ(board.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, findWinnerColumnOne)
+{
+	TicTacToeBoard board;
+
+	board.placePiece(0,0);
+	board.placePiece(1,1);
+	board.placePiece(1,0);
+	board.placePiece(0,1);
+	board.placePiece(2,0);
+
+	ASSERT_EQ(board.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, findWinnerColumnTwo)
+{
+	TicTacToeBoard board;
+
+	board.placePiece(0,0);
+	board.placePiece(1,1);
+	board.placePiece(0,2);
+	board.placePiece(0,1);
+	board.placePiece(2,0);
+	board.placePiece(2,1);
+
+	ASSERT_EQ(board.getWinner(), O);
+}
