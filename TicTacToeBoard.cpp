@@ -47,7 +47,11 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 {
 	Piece val;
 
-	//check if full board is complete
+	Piece winner = getWinner();
+	if (winner != Invalid)
+	{
+		return winner;
+	}
 
 	if (row >= BOARDSIZE || column >= BOARDSIZE || row < 0 || column < 0)
 	{

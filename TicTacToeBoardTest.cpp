@@ -237,3 +237,12 @@ TEST(TicTacToeBoardTest, findWinnerColumnTwo)
 
 	ASSERT_EQ(board.getWinner(), O);
 }
+
+TEST(TicTacToeBoardTest, findWinnerNoWinner)
+{
+	TicTacToeBoard board;
+
+	board.placePiece(0,0);
+
+	ASSERT_EQ(board.getWinner(), Invalid);
+}
