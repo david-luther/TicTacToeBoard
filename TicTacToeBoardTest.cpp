@@ -246,3 +246,16 @@ TEST(TicTacToeBoardTest, findWinnerNoWinner)
 
 	ASSERT_EQ(board.getWinner(), Invalid);
 }
+
+TEST(TicTacToeBoardTest, placePieceAlreadyWinnerBlankSpace)
+{
+	TicTacToeBoard board;
+	
+	board.placePiece(0,0);
+	board.placePiece(1,1);
+	board.placePiece(1,0);
+	board.placePiece(0,1);
+	board.placePiece(2,0);
+
+	ASSERT_EQ(board.placePiece(2,2), X);
+}
