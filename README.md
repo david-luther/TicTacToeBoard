@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/david-luther/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/david-luther/TicTacToeBoard?branch=master)
+
 # TicTacToeBoard
 
 ## Associated Enumerated Types
